@@ -1,0 +1,32 @@
+<div class="test"  ng-controller="HomeController">
+    <div ng-include="'./header/header.html'"></div>
+    <div class="clear"></div>
+    <div class="main">
+        <div ng-include="'./taskbar/taskbar.html'" ng-show="check_login"></div>
+        <div class="home">
+            
+            <div ng-show="check_login">
+                <br /><br />
+                <div>Welcome {{profile.name}} </div>
+                <div>You have x days left until the end of the internship</div>
+            </div>
+            
+            
+            <div class="form" ng-hide="check_login">
+                <br /><br />
+                <form action="" method="post">
+                    <div class="container">
+                        <label for="username"><b>Intership Id</b></label>
+                        <input type="text" placeholder="Intership Id" name="internshipId" ng-model="internshipId" required>
+                        <br /><br/>
+                        <label for="pass"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="pass" ng-model="password" required><br/>
+                        <button type="button" ng-click="login()">Login</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+    <div class="footer"></div>
+</div>
